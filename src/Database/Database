@@ -1,0 +1,27 @@
+DB(Database)
+-체계화된 데이터의 집합체
+-대규모 데이터 공유와 효과적인 운영을 위한 저장소
+
+DB 장점
+-데이터 중복 최소화
+-데이터 공유
+-일관성,무결성,보안성 유지
+
+DBMS(DataBase Management System)
+-저장,조회,수정,삭제 등의 여러 가지 명령을 사용할 수있는 데이터베이스 관리 프로그램
+-종류:Orcle Database,My sql,Ms-sql,mariaDB,PostgreSQL등
+
+SQL(Structured Query Language)
+-구조화된(Structured)데이터베이스에게 질의(Query)하는 언어(Language)
+-Orcle SQL,MS SQL,MY SQL 등
+-CRUD를 할 수 있다
+C:Create / 생성
+R:Read / 조회
+U:Update / 갱신
+D:Delete / 삭제
+
+Oracle SQL의 특징
+-대소문자를 가리지 않는다
+-문자열 표기는 외따옴표(' ')를 사용한다
+-이름을 지을 때 띄어쓰기 대신 _를 사용한다(작명규칙)
+-모든(ALL)이라는 의미로 *를 사용한다

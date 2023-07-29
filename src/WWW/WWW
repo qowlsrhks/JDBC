@@ -1,0 +1,40 @@
+1.WWW(World Wide Web)
+네트워크를 통해 정보를 공유할 수 있는 범세계적 정보 검색 시스템
+
+HTTP(Hypertext Transfer Protocol)
+                        (규약)
+-www 상에서 정보를 주고 받을 수 있는 통신 규약
+
+-Client-Server간의 요청/응답
+(request/response)방식의 통신 규약
+
+-HTML 문서를 주고받으면서 통신하고
+포트 번호는 80번을 사용
+
+2.URI(Uniform Resource Identifier)
+인터넷에 있는 자원을 나타내는 유일한 주소
+하위 개념으로 URL과 URN(X)이 있음
+
+3.URL(Uniform Resource Locator)
+네트워크상에서 자원이 어디 있는지를 알려주기 위한 규약
+인터넷 프로토콜(http,https,FTP..)과 함께 사용
+형식:프로토콜://호스트명+주소
+e.g.https://www.google.com
+
+4.Web Server
+웹페이지가 들어있는 파일을 사용자들에게 제공하는 프로그램
+
+-웹서비스를 하려면 웹 서버 프로그램을 설치해야함
+e.g.Apache,IIS(인터넷 정보 서버),Enterprise Server
+
+5.Client
+서버가 제공하는 웹페이지,자원등을 사용하는 사용자측
+
+
+01.로그인화면
+Client -> Browser < - > Server
+         (Response) <-> (Request)
+02.아이디 입력
+Client ->    Browser     ->    Server      ->   Database
+       Response(조회결과) <-> Request(아이디) -> 조회
+

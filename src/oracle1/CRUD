@@ -1,0 +1,43 @@
+CRUD(Create Read Update Delete)
+데이터 생성,조회,수정,삭제를 통합 표현한 단어
+
+레코드 추가:INSERT INTO [테이블명] VALUES([값1][값2]...); 테이블 컬럼에 맞게 값을 넣어야함
+INSERT INTO student VALUES(
+101,
+'김피카츄',
+'010-1234-1234',
+1,
+88,
+TO_DATE('2023-07-18','YY/MM/DD')
+);
+
+참고.만약 등록날짜를 현재시간으로 지정하고자 한다면 TO_DATE(...)대신 SYSDATE를 사용
+
+
+특정 필드(레코드)추가: insert into [테이블명]([컬럼명1][컬럼명2])values([값1][값2]);
+insert into student(st_num,st_name,st_grade)values(302,'홍길동',3);
+
+
+모든 레코드 보기:SELECT * FROM [테이블명];
+SELECT * FROM student;
+
+참고)콘솔창에서 칸 조절: COL[항목명]FOR A[사이즈];
+COL st_name FOR A6;
+DB(저장소)의 실제 메모리는 변동되지 않고, 보여지는 화면에서만 조절되는 크기임
+주의!NUMBER는 칸 조절하면 글자가 깨짐
+
+참고)
+최종 저장:COMMIT;
+마지막 저장 상태로 되돌아가기:ROLLBACK;
+
+
+모든 레코드의 특정 항목만 보기:SELECT [항목명1],[항목명2],...FROM[테이블명];
+SELECT st_name FROM student; student 테이블에서 st_name 항목만 보여줘!
+SELECT st_num,st_tel FROM student; student 테이블에서 st_num,st_tel 항목만 보여줘!
+
+
+모든 레코드의 특정 항목 수정:UPDATE[테이블명]SET[컬럼명]=[수정할 값];
+UPDATE studetn SET st_score=0; student 테이블의 모든 st_score의 값을 0으로 수정
+
+모든 레코드 삭제: DELETE FROM [테이블명];
+DELETE FROM student;

@@ -1,0 +1,26 @@
+01.Oracle 명령어
+로그인:CONNECT[아이디]/[비밀번호];
+예)CONNECT SYSTEM/ORACLE;
+예)CONNECT / AS SYSDBA;
+(참고 : CONNECT는 CONN으로 줄여 써도 된다)
+
+이 계정 확인:SHOW USER;
+
+계정 생성: CREATE USER[C##계정명]IDENTIFIED BY[비밀번호];
+예) CREATE USER MY_USER IDENTIFIED BY passward1234;
+
+계정 삭제:DROP USER [아이디] CASCADE;
+
+계정 권한 부여:GRANT[권한 종류]TO[계정명]
+예)GRANT DBA TO MY_USER;
+
+모든 DBA의 계정, 비밀번호 조회:SELECT USERNAME FROM DBA_USERS;
+
+특정 계정의 비밀번호 변경:ALTER USER[계정명]INDENTIFIED BY[새 비밀번호];
+
+02.편한 단축키
+명령 복사하기:드래그 후 우클릭
+명령 붙여넣기:복사(Ctrl+c)후 커서 놓고 우클릭
+이전 명령 재실행 : 화살표 위, 아래
+화면 지우기:CL SCR;
+명령 히스토리:F7

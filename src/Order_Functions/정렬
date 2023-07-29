@@ -1,0 +1,33 @@
+01.[정렬] - ORDER BY [항목명] [ASC/DESC];
+주의! 반드시 명령 맨 마지막에 적을 것
+ASC : 오름차순(ascending)
+DESC : 내림차순(descending)
+
+예) 이름 순으로 모든 정보를 확인
+    SELECT * FROM student ORDER BY st_name ASC;
+
+예) 이름 순으로 모든 정보를 확인, 중복인 경우 번호 순으로
+    SELECT * FROM student ORDER BY st_name ASC st_num ASC;
+
+02.함수
+
+합계 - SUN([항목명])
+    SELECT SUN(st_score)FROM student;
+
+평균 - AVG([항목명])
+    SELECT AVG(st_avg)FROM student;
+
+최대 - MAX([항목명])
+    SELECT MAX(st_num)FROM student;
+
+최소 - MIN([항목명])
+    SELECT MIN(st_regdate)FROM student;
+
+개수 - COUNT([항목명])
+    SELECT COUNT(st_tel)FROM student;
+    SELECT COUNT(*)FROM student;
+
+이중 SELECT 문
+
+평균 점수 보다 높은 순서대로 모든 학생들의 정보를 조회한다
+SELECT * FROM student WHERE st_score >= (SELECT AVG(st_score) FROM student) ORDER BY st_score DESC;

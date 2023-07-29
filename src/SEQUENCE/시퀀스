@@ -1,0 +1,51 @@
+01.시퀀스(SEQUENCE)
+-번호표 붙이기(인덱스)담당자
+-레코드의 특정 컬럼에 대한 자동으로 인덱스를 부여할 수 있음
+-NEXTVAL을 사용하여 다음 인덱스로 넘어감
+-한번 넘어간 인덱스는 이전 인덱스로 돌아올 수 없음
+ ㄴ 중복 인덱스가 부여되지 않으므로 값의 고유(UNIQUE)성질을 지킬 수 있음
+
+02.시퀀스 생성
+CREATE SEQUENCE[시퀀스명][옵션1][옵션2];
+
+03.시퀀스 옵션
+1.START WITH n : n부터 시작하겠다
+
+2.INCREMENT BY n : n씩 증가시키겠다(**음수면 감소) - DEFAULT 1
+
+3.MAXVALUE n : 최대값을 n으로 지정
+  NOMAXVALUE : 최대값 없음(무한대로 증가) - DEFAULT
+
+4.MINVALUE n : 최솟값을 n으로 지정
+  NOMINVALUE : 최솟값 없음(무한대로 감소) - DEFAULT
+
+5.CYCLE : 최대값/최솟값 도달 시 순환하겠다 (다시 최솟값/최대값부터 시작하겠다)
+  NOCYCLE : 순환하지 않음(도달하면 더 이상 NEXTVAL을 사용할 수 없음) - DEFAULT
+
+6.CACHE : 미리 메모리에 생성 해두겠다 - DEFAULT 20
+  NOCACHE : 생성해두지 않겠다
+
+시퀀스 생성:CREATE SEQUENCE[시퀀스명][옵션1][옵션2]
+
+CREATE SEQUENCE seq START WITH 3 INCREMENT BY 2 MAXVALUE9999 CYCLE NOCACHE;
+
+CREATE SEQUENCE seq 를 수행하는 경우 적용되는 명령은 다음과 같다 (기본값)
+
+CREATE SEQUENCE seq START WITH 1 INCREMENT BY 1 MAXVALUE  NOCYCLE CACHE20;
+                  (1부터 시작하고 1씩 증가하고 무한대로 늘어나고 순환은 없다 캐쉬는 20개)
+
+시퀀스 적용: (테이블 INSERT 수행 시 적용할 항목에)
+INSERT INTO student VALUE (st_seq NEXTVAL,'이푸린','010-1111-1111',1,89,SYSDATE);
+INSERT INTO student VALUE (st_seq NEXTVAL,'김또도가스','010-2222-2222',1,100,SYSDATE);
+INSERT INTO student VALUE (st_seq NEXTVAL,'장라이츄','010-3333-3333',3,67,SYSDATE);
+INSERT INTO student VALUE (st_seq NEXTVAL,'김피카츄','010-4444-44444',2,83,SYSDATE);
+
+시퀀스 현재 값 조회:SELECT [시퀀스명].CURRVAL FROM DUAL;
+SELECT seq.CURRVAL FROM DUAL;
+단,한번이라도 테이블컬럼에 시퀀스 값이 추가 되어야한다
+
+현재 유저의 모든 시퀀스에 대한 모든 정보 조회 :SELECT * FROM USER_SEQUENCES;
+
+시퀀스 삭제
+DROP seq;
+

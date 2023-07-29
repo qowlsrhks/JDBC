@@ -1,0 +1,32 @@
+//조건이란
+
+  모든 레코드를 대상으로 하지 않고 특정 조건에 맞는 레코드만 조회/수정/삭제 하고 싶을 때 사용
+  SELECT,UPDATE,DELETE 명령의 마지막 부분에 'WHERE[컬럼명][조건]'을 추가
+  예)학번이 101인 학생의 점수를 90점으로 수정
+  이름이 '홍길동'인 학생의 연락처를 '010-2222-3333'으로 수정
+  연락처가 null인 학생들을 삭제
+  김씨인 학생들의 모든 정보를 조회
+
+  2학년인 -> WHERE st_grade = 2
+
+  학번이 5이상 10이하인 -> WHERE st_num >= 5 AND st_num <= 10
+
+  학년이 3학년이 아닌 -> WHERE st_grade != 3 (혹은 WHERE st_grade <> 3)
+
+  학년이 2,4학년인 -> WHERE st_grade = 2 or st_grade = 4
+
+  이름이 김피카츄인 -> WHERE st_name = '김피카츄'
+
+  이름이 '이'로 시작하는 -> WHERE name LIKE '이%'
+
+  이름이 '이'로 끝나는 -> WHERE name LIKE '%이'
+
+  이름에 '이' 가 포함하는 -> WHERE name LIKE '%이%'
+
+  등록일자가 null 인 -> WHERE st_regdate IS NULL
+
+  등록일자가 이번달인 -> WHERER st_regdate LIKE '18/04/%'
+
+  등록일자가 올해 이후인 -> WHERE st_regdate >= '18/01/01'
+
+  //

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context docBase="C:\Program Files\Apache Software Foundation\apache-tomcat-9.0.71">
+  <Resources cacheMaxSize="10240">
+    <PreResources base="C:/Users/user/Desktop/spring-study/JDBC/out/production/JDBC" className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/WEB-INF/classes"/>
+  </Resources>
+</Context>

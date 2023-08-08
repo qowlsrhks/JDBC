@@ -46,6 +46,29 @@ Request 내장 객체의 주요 메서드
 9.Enumeration<String> headerNames() : 요청 header의 모든 이름
 
 
+Response 내장 객체의 주요 메서드
+
+1.void sendRedirect(String url) : 지정 URL로 페이지 이동
+
+2.void setHeader(String name, String value) : HTTP response 헤더 설정
+
+3.String getContentType() : Response 메세지 바디의 컨텐트 타입
+
+4.int getBufferSize() : Response 메세지의 버퍼 크기
+
+5.String getCharacterEncoding() : response의 인코딩 형식
+
+6.String gerHeader(String name) : name에 해당하는 header 정보 구하기
+
+7.int get Status() : 상태 코드 예) (200)
+
+8.Collection<String> getHeaderNames() : 헤더의 모든 이름 가져오기(컬렉션 객체)
+
+9.void addCookie(Cookie cookie) 브라우저에 cookie를 저장
+
+
+
+
 
 
 out 내장객체의 주요 메서드
@@ -63,5 +86,37 @@ out 내장객체의 주요 메서드
 6.void flush() : 출력 버퍼에 있는 모든 내용을 브라우저에 밀어보냄 + 버퍼 비움
 
 7.void close() : flush 후 out 객체를 종료
+
+
+
+application 내장객체의 주요 메서드
+
+application 객체는 하나만 존재 가능하지만 모든 페이지가 application 객체에 접근 가능
+
+1.void setAttribute(String name, Object value) : name-value 속성 추가
+
+2.Object getAttribute(String name) : name에 해당하는 속성 값
+
+3.void removeAttribute(String name) : name 속성을 삭제
+
+4.String getServerInfo() : 웹 컨테이너의 이름과 버전을 리턴
+
+5.String getRealPath(String path) : 지정한 경로를 웹 어플리케이션 시스템상의 경로로 변경하여 리던
+
+6.void log(String message) : 로그 파일에 message를 기록
+
+
+파라미터 VS 애트리뷰트
+
+파라미터(인자)
+->브라우저에게 전송 받은 데이터(<form>,주소창의'?'이후부분)
+->이름-문자열(String)
+    값-문자열만 가능(String)
+
+애트리뷰트(속성)
+->서버내부에서 페이지끼리 주고 받을 수 있는 데이터
+->이름-문자열(String)
+    값-모든 자료형 가능(Object)
+
 
 */

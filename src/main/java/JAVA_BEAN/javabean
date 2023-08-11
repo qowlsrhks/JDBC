@@ -1,0 +1,6 @@
+자바빈(javaBean)이란? : javaBean 규격서에 따라 작성된 자바 클래스(객체)
+
+자바빈 종류
+1.DTO:(Date Transfer Objects): 데이터들 한 세트로 묶기 (식판)
+
+2.DAT(Date Access Objects): DB에 접근할 때 사용 할 메소드들의 집합

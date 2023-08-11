@@ -31,4 +31,22 @@ package 리다이렉트포워드;
     location.href='이동할 페이지';
     </script>
 
+
+포워드 방법 3가지
+
+1.jsp의 pageContext 내장객체 사용
+<%
+    pageContext.forward("이동할 페이지");
+%>
+
+2.forward 액션 태그 사용
+<jsp:forward page = "이동할 페이지"><jsp:forward>
+
+3.request 내장객체의 RequestDispatcher 객체를 사용
+<%
+    RequestDispatch rd = request.getRequestDispatcher("이동할 페이지");
+    rd.forward(request,response);
+%>
+
+
 */
